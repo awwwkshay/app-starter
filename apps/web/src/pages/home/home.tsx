@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { Counter } from "@/components";
+import { Counter, TodoPanel } from "@/components";
 import {
   Card,
   CardHeader,
@@ -116,6 +116,7 @@ export const HomePage = () => {
           </CardFooter>
         </Card>
         <Counter />
+        <TodoPanel />
       </div>
     </MarketingLayout>
   );

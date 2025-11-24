@@ -1,0 +1,10 @@
+{
+  "contact": "contact",
+  "about": "about",
+  "login": "login",
+  "signup": "signup",
+  "hero": {
+    "title1": "React Starter",
+    "title2": "Powered by Vite 🚀"
+  }
+}

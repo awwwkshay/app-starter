@@ -1,0 +1,18 @@
+{
+    "$schema": "./node_modules/oxfmt/configuration_schema.json",
+    "tabWidth": 2,
+    "printWidth": 48,
+    "semi": true,
+    "singleAttributePerLine": true,
+    "singleQuote": false,
+    "trailingComma": "all",
+    "arrowParens": "always",
+    "experimentalSortImports": {
+        "ignoreCase": true
+    },
+    "bracketSameLine": false,
+    "jsxSingleQuote": false,
+    "ignorePatterns": [
+        "node_modules"
+    ]
+}

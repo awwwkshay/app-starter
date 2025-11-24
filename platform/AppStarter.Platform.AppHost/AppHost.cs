@@ -18,6 +18,7 @@ builder.AddNpmApp("web", "../../apps/web")
     .WithReference(api)
     .WaitFor(api)
     .WithHttpEndpoint(port: 5173, env: "PORT")
+    .WithEnvironment("VITE_API_URL", api.GetEndpoint("https"))
     .WithExternalHttpEndpoints();
 
 // Build and run the application

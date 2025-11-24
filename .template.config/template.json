@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Akshay Priyadarshi",
+    "classifications": ["React", "API", "Solution", "Aspire", "Starter"],
+    "identity": "Awwwkkshay.App",
+    "name": "Awwwkkshay App",
+    "shortName": "awwwkshay-app",
+    "tags": {
+        "languages": [
+            "C#",
+            "TypeScript",
+            "JavaScript",
+            "JSON",
+            "HTML5",
+            "CSS3"
+        ],
+        "type": "solution"
+    },
+    "sourceName": "AppStarter",
+    "description": "Starter template for Applications with Aspire capabilities",
+    "preferNameDirectory": true,
+    "symbols": {
+        "SolutionName": {
+            "type": "parameter",
+            "datatype": "string",
+            "replaces": "AppStarter",
+            "defaultValue": "AppStarter"
+        }
+    }
+}

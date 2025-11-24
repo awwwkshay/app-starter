@@ -12,6 +12,15 @@ builder.AddServiceDefaults();
 // Add services
 builder.Services.AddOpenApi();
 
+// Configure CORS to allow localhost:5173
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowLocalFrontend",
+        policy => policy.WithOrigins("http://localhost:5173")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+});
+
 builder.Services.AddDbContext<ApiDbContext>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("apiDb");
@@ -41,7 +50,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowLocalFrontend");
 // CRUD Endpoints
 app.MapGet("/todos", async (ApiDbContext db) =>
     await db.Todos.ToListAsync()

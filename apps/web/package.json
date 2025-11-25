@@ -4,10 +4,10 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "vite",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "prepreview": "pnpm build",
     "format": "oxfmt -c .oxfmtrc.json .",
     "lint": "oxlint --type-aware -c .oxlintrc.json .",
     "prepare": "husky"

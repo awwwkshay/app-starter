@@ -1,5 +1,7 @@
 var builder = DistributedApplication.CreateBuilder(args);
 
+builder.AddKubernetesEnvironment("app-starter");
+
 // Add Postgres database
 var postgres = builder.AddPostgres("postgres")
                     .WithHostPort(5432)

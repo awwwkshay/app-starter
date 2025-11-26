@@ -2,8 +2,8 @@
     "$schema": "http://json.schemastore.org/template",
     "author": "Akshay Priyadarshi",
     "classifications": ["React", "API", "Solution", "Aspire", "Starter"],
-    "identity": "Awwwkkshay.App",
-    "name": "Awwwkkshay App",
+    "identity": "Awwwkshay.App",
+    "name": "Awwwkshay App",
     "shortName": "awwwkshay-app",
     "tags": {
         "languages": [

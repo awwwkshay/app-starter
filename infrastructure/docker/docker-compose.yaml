@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: "postgres:latest"
+    container_name: "appstarter-postgres"
+    environment:
+      POSTGRES_DB: "apiDb"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql
+    networks:
+      - default
+  api:
+    image: "ghcr.io/awwwkshay/appstarter-api:latest"
+    build:
+      context: ../..
+      dockerfile: apps/api/Dockerfile
+    container_name: "appstarter-api"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__apiDb=Host=postgres;Port=5432;Database=apiDb;Username=postgres;Password=postgres
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    depends_on:
+      - postgres
+    networks:
+      - default
+  web:
+    image: "ghcr.io/awwwkshay/appstarter-web:latest"
+    build:
+      context: ../..
+      dockerfile: apps/web/Dockerfile
+    container_name: "appstarter-web"
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "5173:80"
+    depends_on:
+      - api
+    networks:
+      - default
+volumes:
+  postgres-data:
+networks:
+  default:
+    driver: bridge
